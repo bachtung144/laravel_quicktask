@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Type;
+use App;
 
 class PostController extends Controller
 {
@@ -47,7 +48,7 @@ class PostController extends Controller
 
         Post::create($request->all());
 
-        return redirect()->route('posts.index')->with('success','Post created successfully.');
+        return redirect()->route('posts.index')->with('success', __('index.created_success') );
     }
 
     /**
@@ -89,7 +90,7 @@ class PostController extends Controller
         ]);
         $post->update($request->all());
 
-        return redirect()->route('posts.index')->with('success','Post updated successfully');
+        return redirect()->route('posts.index')->with('success', __('index.updated_success'));
     }
 
     /**
@@ -102,6 +103,12 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect()->route('posts.index')->with('success','Post deleted successfully');
+        return redirect()->route('posts.index')->with('success', __('index.deleted_success'));
+    }
+
+    public function changeLanguage($language) {
+        App::setlocale($language);
+        session()->put('locale', $language);
+        return redirect()->back();
     }
 }
