@@ -4,10 +4,10 @@
     <div class="row height-title">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>{{ __('index.title_create') }}</h2>
+                <h2>{{ __('index.name_edit') }}</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('posts.index') }}">{{ __('index.back') }}</a>
+                <a class="btn btn-primary" href="{{ route('types.index') }}">{{ __('index.back') }}</a>
             </div>
         </div>
     </div>
@@ -22,28 +22,17 @@
         </div>
     @endif
 
-    <form action="{{ route('posts.store') }}" method="POST">
+    <form action="{{ route('types.update', $type->id) }}" method="POST">
         @csrf
 
+        @method('PUT')
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>{{ __('index.title') }}:</strong>
-                    <input type="text" name="title" class="form-control" placeholder="{{ __('index.title') }}">
+                    <input type="text" name="name" value="{{ $type->name }}" class="form-control" placeholder="{{ __('index.title') }}">
                 </div>
             </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>{{ __('index.description') }}:</strong>
-                    <textarea class="form-control height-area" name="description" placeholder="{{ __('index.description') }}"></textarea>
-                </div>
-            </div>
-            <select name="type_id" class="margin-select">
-                @foreach ($types as $type)
-                    <option value="{{ $type->id }}">{{ $type->name }}</option>
-                @endforeach
-            </select>
 
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">{{ __('index.btn_submit') }}</button>

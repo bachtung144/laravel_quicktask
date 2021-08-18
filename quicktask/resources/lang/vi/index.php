@@ -14,4 +14,8 @@ return [
     'created_success' => 'Bài viết đã được tạo thành công.',
     'updated_success' => 'Bài viết đã được cập nhật thành công.',
     'deleted_success' => 'Bài viết đã được xóa thành công.',
+    'controller_types' => 'Điều khiển thể loại',
+    'controller_posts' => 'Điều khiển bài viết',
+    'name_edit' => 'Sửa thể loại',
+    'types_list' => 'Danh sách thể loại',
 ];
