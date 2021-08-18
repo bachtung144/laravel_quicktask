@@ -5,3 +5,8 @@
 .height-area{
     height: 150px
 }
+
+.height-title{
+    margin-bottom: 50px !important;
+    margin-top: 20px !important;
+}

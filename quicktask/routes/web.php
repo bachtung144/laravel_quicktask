@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TypeController;
 use App\Http\Controllers\LocaleController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('posts', PostController::class);
+Route::resource('types', TypeController::class);
 
 Route::get('change-language/{language}', 'App\Http\Controllers\LocaleController@changeLanguage')->name('language');

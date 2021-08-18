@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="row">
+    <div class="row height-title" >
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <div class="pull-left">
@@ -14,6 +14,7 @@
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('posts.create') }}">{{ __('index.create') }}</a>
+                <a class="btn btn-success" href="{{ route('types.index') }}">{{ __('index.controller_types') }}</a>
             </div>
         </div>
     </div>

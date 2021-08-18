@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="row">
+    <div class="row height-title">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>{{ __('index.title_edit') }}</h2>
